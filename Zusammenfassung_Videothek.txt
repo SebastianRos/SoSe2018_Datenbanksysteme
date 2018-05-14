@@ -1,0 +1,5 @@
+Das Datenbankschema rund um eine fiktive Videothek verwaltet:
+- Mitarbeiter
+- Kunden
+- Videos/Lager
+- Filialen
