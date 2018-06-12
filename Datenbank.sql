@@ -182,7 +182,62 @@ ALTER TABLE tab_hat_genre
 	ADD CONSTRAINT pk_tab_hat_genre
 	PRIMARY KEY (VideoNr)
 ;
+
 ALTER TABLE tab_genre
 	ADD CONSTRAINT pk_tab_genre
 	PRIMARY KEY (Bezeichnung)
+;
+
+ALTER TABLE tab_kunde
+	ADD CONSTRAINT fk_tab_kunde_tab_person
+	FOREIGN KEY (SozialversicherungsNr)
+	REFERENCES tab_person
+;
+
+ALTER TABLE tab_lizenzgeber
+	ADD CONSTRAINT fk_tab_lizenzgeber_tab_person
+	FOREIGN KEY (SozialversicherungsNr)
+	REFERENCES tab_person
+;
+
+ALTER TABLE tab_leiht
+	ADD CONSTRAINT fk_tab_leiht_tab_kunde
+	FOREIGN KEY (KundenNr)
+	REFERENCES tab_kunde
+;
+
+ALTER TABLE tab_leiht
+	ADD CONSTRAINT fk_tab_leiht_tab_exemplar
+	FOREIGN KEY (ProduktNr)
+	REFERENCES tab_exemplar
+;
+
+ALTER TABLE tab_exemplar
+	ADD CONSTRAINT fk_tab_exemplar_tab_video
+	FOREIGN KEY (VideoNr)
+	REFERENCES tab_video
+;
+
+ALTER TABLE tab_video
+	ADD CONSTRAINT fk_tab_video_tab_video
+	FOREIGN KEY (Titel)
+	REFERENCES tab_video
+;
+
+ALTER TABLE tab_video
+	ADD CONSTRAINT fk_tab_video_tab_lizenzgeber
+	FOREIGN KEY (Untenehmen)
+	REFERENCES tab_lizenzgeber
+;
+
+ALTER TABLE tab_hat_genre
+	ADD CONSTRAINT fk_tab_hat_genre_tab_video
+	FOREIGN KEY (VideoNr)
+	REFERENCES tab_video
+;
+
+ALTER TABLE tab_hat_genre
+	ADD CONSTRAINT fk_tab_hat_genre_tab_genre
+	FOREIGN KEY (Bezeichnung)
+	REFERENCES tab_genre
 ;
