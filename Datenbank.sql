@@ -106,3 +106,43 @@ CREATE TABLE tab_hat_exemplar
     Name VARCHAR(50),
     ProduktNr NUMERIC(6)
 );
+
+ALTER TABLE tab_anschrift_von_person
+ADD CONSTRAINT pk_anschrift_von_person
+PRIMARY KEY (SozialversicherungsNr, Nr)
+;
+
+ALTER TABLE tab_mitarbeiter
+ADD CONSTRAINT pk_mitarbeiter
+PRIMARY KEY (MitarbeiterID)
+;
+
+ALTER TABLE tab_hat_exemplar
+ADD CONSTRAINT pk_hat_exemplar
+PRIMARY KEY (Name, ProduktNr)
+;
+
+ALTER TABLE tab_anschrift
+ADD CONSTRAINT pk_anschrift
+PRIMARY KEY (Nr)
+;
+
+ALTER TABLE tab_plz_ort
+ADD CONSTRAINT pk_plz_ort
+PRIMARY KEY (PLZ)
+;
+
+ALTER TABLE tab_arbeitet_in
+ADD CONSTRAINT pk_arbeitet_in
+PRIMARY KEY (Name, MitarbeiterID)
+;
+
+ALTER TABLE tab_anschrift_von_filiale
+ADD CONSTRAINT pk_anschrift_von_filiale
+PRIMARY KEY (Nr, Name)
+;
+
+ALTER TABLE tab_filiale
+ADD CONSTRAINT pk_filiale
+PRIMARY KEY (Name)
+;
