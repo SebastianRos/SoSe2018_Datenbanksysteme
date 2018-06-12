@@ -106,3 +106,42 @@ CREATE TABLE tab_hat_exemplar
     Name VARCHAR(50),
     ProduktNr NUMERIC(6)
 );
+
+ALTER TABLE tab_person
+	ADD CONSTRAINT pk_tab_person
+	PRIMARY KEY (SozialversicherungsNr)
+;
+
+ALTER TABLE tab_kunde
+	ADD CONSTRAINT pk_tab_kunde
+	PRIMARY KEY (KundenNr)
+;
+
+ALTER TABLE tab_lizenzgeber
+	ADD CONSTRAINT pk_tab_lizenzgeber
+	PRIMARY KEY (Unternehmen)
+;
+
+ALTER TABLE tab_leiht
+	ADD CONSTRAINT pk_tab_leiht
+	PRIMARY KEY (ProduktNr, KundenNr, Datum)
+;
+
+ALTER TABLE tab_exemplar
+	ADD CONSTRAINT pk_tab_exemplar
+	PRIMARY KEY (ProduktNr)
+;
+
+ALTER TABLE tab_video
+	ADD CONSTRAINT pk_tab_video
+	PRIMARY KEY (VideoNr)
+;
+
+ALTER TABLE tab_hat_genre
+	ADD CONSTRAINT pk_tab_hat_genre
+	PRIMARY KEY (VideoNr)
+;
+ALTER TABLE tab_genre
+	ADD CONSTRAINT pk_tab_genre
+	PRIMARY KEY (Bezeichnung)
+;
