@@ -280,13 +280,13 @@ ALTER TABLE tab_leiht
 
 ALTER TABLE tab_exemplar
 	ADD CONSTRAINT fk_tab_exemplar_tab_video
-	FOREIGN KEY (VideoNr)
+	FOREIGN KEY (ProduktNr)
 	REFERENCES tab_video
 ;
 
 ALTER TABLE tab_video
 	ADD CONSTRAINT fk_tab_video_tab_video
-	FOREIGN KEY (Titel)
+	FOREIGN KEY (VideoNr)
 	REFERENCES tab_video
 ;
 
