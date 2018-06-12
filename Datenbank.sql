@@ -186,3 +186,69 @@ ALTER TABLE tab_genre
 	ADD CONSTRAINT pk_tab_genre
 	PRIMARY KEY (Bezeichnung)
 ;
+
+ALTER TABLE tab_anschrift_von_person
+ADD CONSTRAINT fk_anschrift_v_p_person
+FOREIGN KEY (SozialversicherungsNr)
+REFERENCES tab_person
+;
+
+ALTER TABLE tab_anschrift_von_person
+ADD CONSTRAINT fk_anschrift_v_p_anschrift
+FOREIGN KEY (Nr)
+REFERENCES tab_anschrift
+;
+
+ALTER TABLE tab_mitarbeiter
+ADD CONSTRAINT fk_mitarbeiter_mitarbeiter
+FOREIGN KEY (MitarbeiterID)
+REFERENCES tab_mitarbeiter
+;
+
+ALTER TABLE tab_mitarbeiter
+ADD CONSTRAINT fk_mitarbeiter_person
+FOREIGN KEY (SozialversicherungsNr)
+REFERENCES tab_person
+;
+
+ALTER TABLE tab_hat_exemplar
+ADD CONSTRAINT fk_hat_exemplar_exemplar
+FOREIGN KEY (ProduktNr)
+REFERENCES tab_exemplar
+;
+
+ALTER TABLE tab_hat_exemplar
+ADD CONSTRAINT fk_hat_exemplar_filiale
+FOREIGN KEY (Name)
+REFERENCES tab_filiale
+;
+
+ALTER TABLE tab_anschrift
+ADD CONSTRAINT fk_anschrift_plz_ort
+FOREIGN KEY (PLZ)
+REFERENCES tab_plz_ort
+;
+
+ALTER TABLE tab_arbeitet_in
+ADD CONSTRAINT fk_arbeitet_in_mitarbeiter
+FOREIGN KEY (MitarbeiterID)
+REFERENCES tab_mitarbeiter
+;
+
+ALTER TABLE tab_arbeitet_in
+ADD CONSTRAINT fk_arbeitet_in_filiale
+FOREIGN KEY (Name)
+REFERENCES tab_filiale
+;
+
+ALTER TABLE tab_anschrift_von_filiale
+ADD CONSTRAINT fk_anschrift_v_f_anschrift
+FOREIGN KEY (Nr)
+REFERENCES tab_anschrift
+;
+
+ALTER TABLE tab_anschrift_von_filiale
+ADD CONSTRAINT fk_anschrift_v_f_filiale
+FOREIGN KEY (Name)
+REFERENCES tab_filiale
+;
