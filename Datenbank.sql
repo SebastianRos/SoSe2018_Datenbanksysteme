@@ -30,6 +30,7 @@ CREATE TABLE tab_leiht
 
 CREATE TABLE tab_exemplar
 (
+    ProduktNr NUMERIC(6),
 	Titel VARCHAR(40),
 	Auflage NUMERIC(2)
 );
