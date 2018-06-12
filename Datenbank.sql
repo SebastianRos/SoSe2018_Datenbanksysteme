@@ -1,3 +1,8 @@
+spool ueb5_concept.log 
+set echo on
+set linesize 80
+set pagesite 50
+
 CREATE TABLE tab_person
 (
 	SozialversicherungsNr NUMERIC(20),
@@ -307,3 +312,5 @@ ALTER TABLE tab_hat_genre
 	FOREIGN KEY (Bezeichnung)
 	REFERENCES tab_genre
 ;
+
+set spool off
